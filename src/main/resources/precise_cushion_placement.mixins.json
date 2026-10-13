@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "net.myitian.precise_cushion_placement.mixin",
+  "client": [
+    "MultiPlayerGameModeMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
