@@ -1,6 +1,8 @@
-# Precise Cushion Placement
+# Precise Cushion Placement 精准坐垫放置
 
 [中文](#中文) | [English](#English)
+
+![Cover](.github/cover.png)
 
 ---
 
