@@ -1,12 +1,10 @@
 # Precise Cushion Placement 精准坐垫放置
 
-[中文](#中文) | [English](#English)
+[简介（中文）](#简介) | [Description (English)](#Description)
 
 ![Cover](.github/cover.png)
 
----
-
-<span id="中文"></span>
+## 简介
 
 在精准的Y坐标位置放置坐垫。
 
@@ -30,9 +28,7 @@ Y偏移量的来源顺序可以通过配置文件或命令进行修改。
 | `config get`              | 无              | 显示当前配置    |
 | `config set valueSources` | 枚举值集合          | 设置Y偏移量的来源 |
 
----
-
-<span id="English"></span>
+## Description
 
 Place cushions with precise Y position.
 
@@ -55,3 +51,7 @@ Command list (subcommands are prefixed with `/precise_cushion_placement`):
 | `config reset`            | None            | Reset configuration        |
 | `config get`              | None            | Show current configuration |
 | `config set valueSources` | Enum set        | Set Y offset sources       |
+
+## License 许可证
+
+MIT License
