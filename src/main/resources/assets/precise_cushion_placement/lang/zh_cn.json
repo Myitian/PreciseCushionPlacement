@@ -3,7 +3,7 @@
   "modmenu.descriptionTranslation.precise_cushion_placement": "在精准的Y坐标位置放置坐垫。",
   "modmenu.summaryTranslation.precise_cushion_placement": "在精准的Y坐标位置放置坐垫",
   "precise_cushion_placement.config.header": "精准坐垫放置 配置",
-  "precise_cushion_placement.config.reset": "配置已重置",
+  "precise_cushion_placement.config.reset": "配置已重置为默认值",
   "precise_cushion_placement.config.set": "将 %s 设置为",
   "precise_cushion_placement.config.reload": "配置已重新加载",
   "precise_cushion_placement.config.separator": "：",
