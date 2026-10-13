@@ -10,7 +10,7 @@
 
 在精准的Y坐标位置放置坐垫。
 
-默认会依次尝试从手持坐垫物品自定义名称、副手物品自定义名称、命令设置的值获取坐垫的方块内Y坐标偏移量，如果发现有效值（0.0~1.0），则会在放置坐垫时计算新的Y值（ $y_{\mathrm{new}}=\left\lfloor y_0\right\rfloor+y_{\mathrm{offset}}$ ）并使用新Y值和`Direction.UP`合成一个新的`BlockHitResult`，从而实现精准的Y坐标放置。
+默认会依次尝试从手持坐垫物品自定义名称、副手物品自定义名称、命令设置的值获取坐垫的方块内Y坐标偏移量，如果发现有效值（ $\left[0.0,1.0\right]$ ），则会在放置坐垫时计算新的Y值（ $y_{\mathrm{new}}=\left\lfloor y_0\right\rfloor+y_{\mathrm{offset}}$ ）并使用新Y值和`Direction.UP`合成一个新的`BlockHitResult`，从而实现精准的Y坐标放置。
 
 > [!WARNING]
 >
@@ -36,7 +36,7 @@ Y偏移量的来源顺序可以通过配置文件或命令进行修改。
 
 Place cushions with precise Y position.
 
-By default, it will try to get the Y coordinate offset of the cushion from the held cushion item custom name, offhand item custom name, or the value set by command in order. If a valid value (0.0~1.0) is found, a new Y value will be calculated when placing the cushion ($y_{\mathrm{new}}=\left\lfloor y_0\right\rfloor+y_{\mathrm{offset}}$) and a new `BlockHitResult` will be synthesized using the new Y value and `Direction.UP`, thus achieving precise Y coordinate placement.
+By default, it will try to get the Y coordinate offset of the cushion from the held cushion item custom name, offhand item custom name, or the value set by command in order. If a valid value ($\left[0.0,1.0\right]$) is found, a new Y value will be calculated when placing the cushion ($y_{\mathrm{new}}=\left\lfloor y_0\right\rfloor+y_{\mathrm{offset}}$) and a new `BlockHitResult` will be synthesized using the new Y value and `Direction.UP`, thus achieving precise Y coordinate placement.
 
 > [!WARNING]
 >
