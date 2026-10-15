@@ -1,7 +1,7 @@
 {
   "modmenu.nameTranslation.precise_cushion_placement": "Precise Cushion Placement",
-  "modmenu.descriptionTranslation.precise_cushion_placement": "Place cushions with precise Y position.",
-  "modmenu.summaryTranslation.precise_cushion_placement": "Place cushions with precise Y position",
+  "modmenu.descriptionTranslation.precise_cushion_placement": "A client-side-only mod that allows players to place cushions at precise Y-coordinates.",
+  "modmenu.summaryTranslation.precise_cushion_placement": "A client-side-only mod that allows players to place cushions at precise Y-coordinates.",
   "precise_cushion_placement.config.header": "Precise Cushion Placement Configuration",
   "precise_cushion_placement.config.reset": "Configuration reset to default values",
   "precise_cushion_placement.config.reload": "Configuration reloaded",

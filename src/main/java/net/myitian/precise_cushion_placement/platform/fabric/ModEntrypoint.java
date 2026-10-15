@@ -10,7 +10,7 @@ import net.minecraft.commands.CommandBuildContext;
 import net.myitian.precise_cushion_placement.CommandBuilder;
 import net.myitian.precise_cushion_placement.PreciseCushionPlacement;
 
-public final class PreciseCushionPlacementFabric implements ClientModInitializer {
+public final class ModEntrypoint implements ClientModInitializer {
     private static void onClientCommandRegister(CommandDispatcher<FabricClientCommandSource> dispatcher, CommandBuildContext registryAccess) {
         dispatcher.register(
             new CommandBuilder<>(FabricClientCommandSource::sendFeedback)
@@ -20,6 +20,6 @@ public final class PreciseCushionPlacementFabric implements ClientModInitializer
     @Override
     public void onInitializeClient() {
         PreciseCushionPlacement.init(FabricLoader.getInstance()::getConfigDir);
-        ClientCommandRegistrationCallback.EVENT.register(PreciseCushionPlacementFabric::onClientCommandRegister);
+        ClientCommandRegistrationCallback.EVENT.register(ModEntrypoint::onClientCommandRegister);
     }
 }

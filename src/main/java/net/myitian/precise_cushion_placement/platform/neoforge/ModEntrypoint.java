@@ -13,8 +13,8 @@ import net.neoforged.neoforge.client.event.RegisterClientCommandsEvent;
 
 @Mod(value = PreciseCushionPlacement.MOD_ID, dist = Dist.CLIENT)
 @EventBusSubscriber(modid = PreciseCushionPlacement.MOD_ID, value = Dist.CLIENT)
-public final class PreciseCushionPlacementNeoForge {
-    public PreciseCushionPlacementNeoForge() {
+public final class ModEntrypoint {
+    public ModEntrypoint() {
         PreciseCushionPlacement.init(FMLPaths.CONFIGDIR::get);
     }
 

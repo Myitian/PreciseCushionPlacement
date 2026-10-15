@@ -19,7 +19,7 @@
   ],
   "entrypoints": {
     "client": [
-      "${group}.platform.fabric.${mod_name_short}Fabric"
+      "${group}.platform.fabric.ModEntryPoint"
     ]
   },
   "depends": {

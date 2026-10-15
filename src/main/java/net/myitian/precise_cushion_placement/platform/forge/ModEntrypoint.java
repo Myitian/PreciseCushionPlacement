@@ -12,8 +12,8 @@ import net.myitian.precise_cushion_placement.PreciseCushionPlacement;
 
 @Mod(PreciseCushionPlacement.MOD_ID)
 @Mod.EventBusSubscriber(modid = PreciseCushionPlacement.MOD_ID, value = Dist.CLIENT)
-public final class PreciseCushionPlacementForge {
-    public PreciseCushionPlacementForge() {
+public final class ModEntrypoint {
+    public ModEntrypoint() {
         PreciseCushionPlacement.init(FMLPaths.CONFIGDIR::get);
     }
 
