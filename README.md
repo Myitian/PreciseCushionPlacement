@@ -2,7 +2,7 @@
 
 [中文](README.zh-Hans.md) | [**English**](README.md)
 
-![LOGO](.github/cover.png)
+![LOGO](.images/logo.png)
 
 ## Description
 
@@ -34,7 +34,7 @@ The default configuration is:
 
 You can also make changes in-game using commands:
 
-![In-game config](.github/config.gif)
+![In-game config](.images/config.gif)
 
 ## Commands
 
@@ -54,15 +54,15 @@ Subcommands are prefixed with `/precise_cushion_placement`.
 
 ### `CUSHION_ITEM_NAME`
 
-![Place cushion precisely with Y offset parsed from cushion item name](.github/CUSHION_ITEM_NAME.gif)
+![Place cushion precisely with Y offset parsed from cushion item name](.images/CUSHION_ITEM_NAME.gif)
 
 ### `OFFHAND_ITEM_NAME`
 
-![Place cushion precisely with Y offset set parsed from offhand item name](.github/OFFHAND_ITEM_NAME.gif)
+![Place cushion precisely with Y offset set parsed from offhand item name](.images/OFFHAND_ITEM_NAME.gif)
 
 ### `COMMAND`
 
-![Place cushion precisely with Y offset set by command](.github/COMMAND.gif)
+![Place cushion precisely with Y offset set by command](.images/COMMAND.gif)
 
 ## License
 

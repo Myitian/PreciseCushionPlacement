@@ -2,7 +2,7 @@
 
 [**中文**](README.zh-Hans.md) | [English](README.md)
 
-![图标](.github/cover.png)
+![图标](.images/logo.png)
 
 ## 简介
 
@@ -34,7 +34,7 @@ Y偏移量的来源顺序可以通过配置文件或命令进行修改。
 
 也可在游戏内通过命令进行修改：
 
-![游戏内配置](.github/config.zh-Hans.gif)
+![游戏内配置](.images/config.zh-Hans.gif)
 
 ## 命令
 
@@ -54,15 +54,15 @@ Y偏移量的来源顺序可以通过配置文件或命令进行修改。
 
 ### `CUSHION_ITEM_NAME`
 
-![根据坐垫物品名称中解析出的Y轴偏移量精准放置坐垫](.github/CUSHION_ITEM_NAME.gif)
+![根据坐垫物品名称中解析出的Y轴偏移量精准放置坐垫](.images/CUSHION_ITEM_NAME.gif)
 
 ### `OFFHAND_ITEM_NAME`
 
-![根据副手物品名称中解析出的Y轴偏移量精准放置坐垫](.github/OFFHAND_ITEM_NAME.gif)
+![根据副手物品名称中解析出的Y轴偏移量精准放置坐垫](.images/OFFHAND_ITEM_NAME.gif)
 
 ### `COMMAND`
 
-![根据命令设定的Y轴偏移量精准放置坐垫](.github/COMMAND.gif)
+![根据命令设定的Y轴偏移量精准放置坐垫](.images/COMMAND.gif)
 
 ## 许可证
 
