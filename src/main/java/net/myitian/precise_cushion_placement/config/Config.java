@@ -14,7 +14,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 
 public final class Config {
-    public static final LinkedHashSet<ValueSource> valueSources = new LinkedHashSet<>(3);
+    public static final LinkedHashSet<ValueSource> offsetSources = new LinkedHashSet<>(3);
     private static final ConfigCodec CODEC = new ConfigCodec();
 
     static {
@@ -23,16 +23,16 @@ public final class Config {
     }
 
     public static void reset() {
-        valueSources.clear();
-        valueSources.add(ValueSource.CUSHION_ITEM_NAME);
-        valueSources.add(ValueSource.OFFHAND_ITEM_NAME);
-        valueSources.add(ValueSource.COMMAND);
+        offsetSources.clear();
+        offsetSources.add(ValueSource.CUSHION_ITEM_NAME);
+        offsetSources.add(ValueSource.OFFHAND_ITEM_NAME);
+        offsetSources.add(ValueSource.COMMAND);
     }
 
     private static void registerCodec(Map<String, Pair<ConfigCodec.ConsumerWithIOException<JsonReader>, ConfigCodec.ConsumerWithIOException<JsonWriter>>> map) {
-        map.put("valueSources", Pair.of(
-            reader -> ConfigCodec.deserializeEnumCollection(reader, valueSources, ValueSource.class),
-            writer -> ConfigCodec.serializeEnumIterable(writer, valueSources)
+        map.put("offsetSources", Pair.of(
+            reader -> ConfigCodec.deserializeEnumCollection(reader, offsetSources, ValueSource.class),
+            writer -> ConfigCodec.serializeEnumIterable(writer, offsetSources)
         ));
     }
 

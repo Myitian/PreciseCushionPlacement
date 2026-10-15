@@ -41,16 +41,16 @@ public final class PreciseCushionPlacement {
     }
 
     public static double getYOffset(ItemStack cushionStack, ItemStack offhandStack) {
-        for (ValueSource source : Config.valueSources) {
+        for (ValueSource source : Config.offsetSources) {
             switch (source) {
                 case CUSHION_ITEM_NAME -> {
-                    double offset = getDoubleFromCustomName(cushionStack);
+                    double offset = getDoubleFromItemName(cushionStack, 0, 1);
                     if (Double.isFinite(offset)) {
                         return offset;
                     }
                 }
                 case OFFHAND_ITEM_NAME -> {
-                    double offset = getDoubleFromCustomName(offhandStack);
+                    double offset = getDoubleFromItemName(offhandStack, 0, 1);
                     if (Double.isFinite(offset)) {
                         return offset;
                     }
@@ -105,12 +105,12 @@ public final class PreciseCushionPlacement {
         return Component.translatableWithFallback(nameKey, configName).setStyle(style);
     }
 
-    private static double getDoubleFromCustomName(ItemStack cushionStack) {
-        if (cushionStack.getCustomName() instanceof Component itemName) {
+    public static double getDoubleFromItemName(ItemStack cushionStack, double min, double max) {
+        if (cushionStack.getHoverName() instanceof Component itemName) {
             try {
-                double offset = Double.parseDouble(itemName.getString());
-                if (Double.isFinite(offset)) {
-                    return Math.clamp(offset, 0, 1);
+                double value = Double.parseDouble(itemName.getString());
+                if (value >= min && value <= max) {
+                    return value;
                 }
             } catch (NumberFormatException _) {
             }

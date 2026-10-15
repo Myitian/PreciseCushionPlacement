@@ -20,8 +20,6 @@ public record CommandBuilder<S>(BiConsumer<S, Component> sendFeedback) {
     public LiteralArgumentBuilder<S> build(
         Function<String, LiteralArgumentBuilder<S>> literal,
         BiFunction<String, ArgumentType<?>, RequiredArgumentBuilder<S, ?>> argument) {
-        DoubleArgumentType offsetValueArg = DoubleArgumentType.doubleArg(0, 1);
-        EnumSetArgumentType<ValueSource> valueSourceArg = EnumSetArgumentType.enumSet(ValueSource.class);
         return literal.apply("precise_cushion_placement")
             .then(literal.apply("offset")
                 .then(literal.apply("clear")
@@ -29,7 +27,7 @@ public record CommandBuilder<S>(BiConsumer<S, Component> sendFeedback) {
                 .then(literal.apply("get")
                     .executes(this::getOffset))
                 .then(literal.apply("set")
-                    .then(argument.apply("value", offsetValueArg)
+                    .then(argument.apply("value", DoubleArgumentType.doubleArg(0, 1))
                         .executes(this::setOffset))))
             .then(literal.apply("config")
                 .then(literal.apply("reload")
@@ -39,9 +37,9 @@ public record CommandBuilder<S>(BiConsumer<S, Component> sendFeedback) {
                 .then(literal.apply("get")
                     .executes(this::getConfig))
                 .then(literal.apply("set")
-                    .then(literal.apply("valueSources")
-                        .then(argument.apply("value", valueSourceArg)
-                            .executes(this::setConfig_valueSources)))));
+                    .then(literal.apply("offsetSources")
+                        .then(argument.apply("value", EnumSetArgumentType.enumSet(ValueSource.class))
+                            .executes(this::setConfig_offsetSources)))));
     }
 
     private int clearOffset(CommandContext<S> ctx) {
@@ -90,26 +88,26 @@ public record CommandBuilder<S>(BiConsumer<S, Component> sendFeedback) {
                 .withStyle(ChatFormatting.GREEN))
             .append(Component.literal("] ===")));
         sendFeedback.accept(source, Component.empty()
-            .append(PreciseCushionPlacement.getConfigName("valueSources"))
+            .append(PreciseCushionPlacement.getConfigName("offsetSources"))
             .append(Component.translatable("precise_cushion_placement.config.separator"))
-            .append(PreciseCushionPlacement.getEnumsName(Config.valueSources)));
+            .append(PreciseCushionPlacement.getEnumsName(Config.offsetSources)));
         return Command.SINGLE_SUCCESS;
     }
 
-    private int setConfig_valueSources(CommandContext<S> ctx) {
+    private int setConfig_offsetSources(CommandContext<S> ctx) {
         @SuppressWarnings("unchecked")
         LinkedHashSet<ValueSource> value = (LinkedHashSet<ValueSource>) EnumSetArgumentType.getSet(ctx, "value");
         PreciseCushionPlacement.loadConfig();
-        if (!Iterables.elementsEqual(Config.valueSources, value)) {
-            Config.valueSources.clear();
-            Config.valueSources.addAll(value);
+        if (!Iterables.elementsEqual(Config.offsetSources, value)) {
+            Config.offsetSources.clear();
+            Config.offsetSources.addAll(value);
             PreciseCushionPlacement.saveConfig();
         }
         sendFeedback.accept(ctx.getSource(), PreciseCushionPlacement.getModPrefix()
             .append(Component.translatable("precise_cushion_placement.config.set",
-                PreciseCushionPlacement.getConfigName("valueSources")))
+                PreciseCushionPlacement.getConfigName("offsetSources")))
             .append(Component.translatable("precise_cushion_placement.config.separator"))
-            .append(PreciseCushionPlacement.getEnumsName(Config.valueSources)));
+            .append(PreciseCushionPlacement.getEnumsName(Config.offsetSources)));
         return Command.SINGLE_SUCCESS;
     }
 }
